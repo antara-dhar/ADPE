@@ -1,0 +1,27 @@
+:root {
+  /* stone-blueprint palette (Taste Skill 2.5) */
+  --p-bg: #dfdedb;              /* Warm stone drafting ground */
+  --p-surface: #d3d2ce;         /* Structural panel step */
+  --p-surface-subtle: #e6e5e2;  /* Elevated card ground */
+  --p-ink: #26251e;             /* Near-black graphite ink */
+  --p-muted: #5f5d55;           /* Secondary technical metadata */
+  --p-accent: #2456d6;          /* Blueprint blue */
+  --p-accent-ink: #ffffff;
+  --p-border: #c4c3be;          /* Hairline boundary */
+
+  /* Typography */
+  --font-display: 'Geist', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-text: 'Geist', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --display-weight: 400;
+  --display-tracking: -0.035em;
+
+  /* Spacing Scale */
+  --nav: 72px;
+  --container: 1280px;
+  --gut: 80px;
+  --gutter: 24px;
+  --padt: 120px;
+  --padb: 72px;
+  --head-gap: 48px;
+}
