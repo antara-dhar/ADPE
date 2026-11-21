@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink, Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { siteConfig } from '../data/siteConfig.js';
 
 export default function Header() {
@@ -21,150 +21,106 @@ export default function Header() {
   };
 
   return (
-    <header style={{
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      right: 0,
-      height: 'var(--nav)',
-      backgroundColor: 'rgba(223, 222, 219, 0.94)',
-      backdropFilter: 'blur(8px)',
-      WebkitBackdropFilter: 'blur(8px)',
-      borderBottom: '1px solid var(--p-border)',
-      zIndex: 100
-    }}>
+    <header className="site-header">
       <a href="#main-content" className="skip-link">Skip to content</a>
-      <div className="wrap" style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Link 
-          to="/" 
-          style={{ 
-            textDecoration: 'none', 
-            color: 'var(--p-ink)', 
-            fontWeight: 600, 
-            fontSize: '20px', 
-            letterSpacing: '-0.02em',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '8px'
-          }}
-        >
-          <span style={{
-            display: 'inline-block',
-            width: '8px',
-            height: '8px',
-            borderRadius: '50%',
-            backgroundColor: 'var(--p-accent)'
-          }}></span>
-          {siteConfig.headerWordmark}
+      <div className="wrap header-inner">
+        {/* Brand Mark with Bespoke Transmission Monogram */}
+        <Link to="/" className="brand-logo" onClick={() => setMenuOpen(false)}>
+          <div className="brand-mark">
+            <svg fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" width="22" height="22">
+              <path d="M12 2.5 L7 22 M12 2.5 L17 22" />
+              <path d="M4 7 L20 7" />
+              <path d="M5 13 L19 13" />
+              <path d="M8 7 L16 13 M16 7 L8 13" />
+              <circle cx="12" cy="2.5" r="1.5" fill="currentColor" />
+            </svg>
+          </div>
+          <div className="brand-text">
+            <span className="brand-name">{siteConfig.headerWordmark}</span>
+            <span className="brand-sub">Consultancy</span>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav style={{ display: 'flex', gap: '32px', alignItems: 'center' }} className="desktop-nav">
-          {siteConfig.navLinks.map((link) => {
-            if (link.path.startsWith('/#')) {
-              return (
-                <Link
-                  key={link.label}
-                  to={link.path}
-                  onClick={(e) => handleNavClick(e, link.path)}
-                  style={{
-                    textDecoration: 'none',
-                    color: 'var(--p-muted)',
-                    fontSize: '15px',
-                    fontWeight: 500,
-                    transition: 'color 0.15s ease'
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--p-ink)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--p-muted)')}
-                >
-                  {link.label}
-                </Link>
-              );
-            }
-
-            return (
-              <NavLink
-                key={link.label}
-                to={link.path}
-                end={link.path === '/'}
-                style={({ isActive }) => ({
-                  textDecoration: 'none',
-                  color: isActive ? 'var(--p-ink)' : 'var(--p-muted)',
-                  fontSize: '15px',
-                  fontWeight: isActive ? 600 : 500,
-                  position: 'relative',
-                  paddingBottom: '4px',
-                  borderBottom: isActive ? '2px solid var(--p-accent)' : '2px solid transparent',
-                  transition: 'all 0.15s ease'
-                })}
-              >
-                {link.label}
-              </NavLink>
-            );
-          })}
+        <nav className="desktop-nav" aria-label="Main Navigation">
+          <Link
+            to="/"
+            className={`nav-link ${location.pathname === '/' && !location.hash ? 'active' : ''}`}
+          >
+            Home
+          </Link>
+          <Link
+            to="/services"
+            className={`nav-link ${location.pathname === '/services' ? 'active' : ''}`}
+          >
+            Services
+          </Link>
+          <Link
+            to="/#about"
+            className="nav-link"
+            onClick={(e) => handleNavClick(e, '/#about')}
+          >
+            About
+          </Link>
+          <Link
+            to="/#contact"
+            className="nav-link"
+            onClick={(e) => handleNavClick(e, '/#contact')}
+          >
+            Contact
+          </Link>
         </nav>
 
-        {/* Accessible Mobile Menu Toggle */}
+        {/* Mobile Hamburger Toggle Button */}
         <button
-          onClick={() => setMenuOpen(!menuOpen)}
           className="mobile-toggle"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label={menuOpen ? 'Close Navigation Menu' : 'Open Navigation Menu'}
           aria-expanded={menuOpen}
-          aria-label="Toggle navigation menu"
         >
-          {menuOpen ? '✕' : '☰'}
+          {menuOpen ? (
+            <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+          ) : (
+            <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          )}
         </button>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer Menu */}
       {menuOpen && (
-        <div style={{
-          position: 'fixed',
-          top: 'var(--nav)',
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: 'var(--p-bg)',
-          padding: '32px 24px',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '24px',
-          borderBottom: '1px solid var(--p-border)',
-          zIndex: 99
-        }}>
-          {siteConfig.navLinks.map((link) => (
-            link.path.startsWith('/#') ? (
-              <Link
-                key={link.label}
-                to={link.path}
-                onClick={(e) => handleNavClick(e, link.path)}
-                style={{
-                  textDecoration: 'none',
-                  color: 'var(--p-ink)',
-                  fontSize: '20px',
-                  fontWeight: 500,
-                  padding: '8px 0'
-                }}
-              >
-                {link.label}
-              </Link>
-            ) : (
-              <NavLink
-                key={link.label}
-                to={link.path}
-                end={link.path === '/'}
-                onClick={() => setMenuOpen(false)}
-                style={({ isActive }) => ({
-                  textDecoration: 'none',
-                  color: isActive ? 'var(--p-accent)' : 'var(--p-ink)',
-                  fontSize: '20px',
-                  fontWeight: isActive ? 600 : 500,
-                  padding: '8px 0'
-                })}
-              >
-                {link.label}
-              </NavLink>
-            )
-          ))}
+        <div className="mobile-drawer" style={{ display: 'flex' }}>
+          <Link
+            to="/"
+            className="nav-link"
+            onClick={(e) => handleNavClick(e, '/')}
+          >
+            Home
+          </Link>
+          <Link
+            to="/services"
+            className="nav-link"
+            onClick={() => setMenuOpen(false)}
+          >
+            Services
+          </Link>
+          <Link
+            to="/#about"
+            className="nav-link"
+            onClick={(e) => handleNavClick(e, '/#about')}
+          >
+            About
+          </Link>
+          <Link
+            to="/#contact"
+            className="nav-link"
+            onClick={(e) => handleNavClick(e, '/#contact')}
+          >
+            Contact
+          </Link>
         </div>
       )}
     </header>

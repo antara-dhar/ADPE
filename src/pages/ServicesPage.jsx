@@ -1,346 +1,136 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { servicesData } from '../data/servicesData.js';
-import { siteConfig } from '../data/siteConfig.js';
 
 export default function ServicesPage() {
   const gna = servicesData.find(s => s.id === 'gna');
   const seci = servicesData.find(s => s.id === 'seci');
 
   return (
-    <main id="main-content" style={{ paddingTop: 'var(--nav)' }}>
-      {/* Services Header Banner */}
-      <section style={{
-        padding: '64px 0 44px 0',
-        borderBottom: '1px solid var(--p-border)',
-        backgroundColor: 'var(--p-surface-subtle)'
-      }}>
+    <main id="main-content">
+      {/* =========================================================
+          SERVICES EDITORIAL SKY BANNER
+          ========================================================= */}
+      <section className="services-editorial-hero">
         <div className="wrap">
-          <div style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '8px',
-            backgroundColor: 'var(--p-surface)',
-            border: '1px solid var(--p-border)',
-            padding: '6px 14px',
-            borderRadius: '999px',
-            fontSize: '13px',
-            fontWeight: 500,
-            color: 'var(--p-ink)',
-            marginBottom: '16px'
-          }}>
-            <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--p-accent)' }}></span>
-            Advisory Capabilities & Knowledge Areas
+          <div className="services-hero-inner">
+            <div className="services-tag">Advisory Practice</div>
+            <h1>Transmission Connectivity & Utility Procurement</h1>
+            <p>
+              Independent statutory and commercial advisory navigating the two foundational pillars of India's clean power transition: Inter-State Transmission Access (GNA) and central competitive renewable auctions (SECI).
+            </p>
+
+            <div className="services-jump-links">
+              <a href="#gna" className="jump-link-item">
+                <span>&darr; 01 / General Network Access (GNA)</span>
+              </a>
+              <a href="#seci" className="jump-link-item">
+                <span>&darr; 02 / SECI Utility-Scale Tenders</span>
+              </a>
+            </div>
           </div>
-          <h1 style={{
-            fontSize: 'clamp(28px, 4vw, 50px)',
-            fontWeight: 400,
-            lineHeight: 1.15,
-            letterSpacing: 'var(--display-tracking)',
-            margin: '0 0 16px 0',
-            color: 'var(--p-ink)',
-            wordBreak: 'break-word'
-          }}>
-            Power Sector Advisory & Regulatory Services
-          </h1>
-          <p style={{
-            fontSize: '17px',
-            color: 'var(--p-muted)',
-            maxWidth: '680px',
-            lineHeight: 1.6,
-            margin: 0
-          }}>
-            {siteConfig.companyName} provides specialized advisory and educational intelligence across Indian power transmission regulations and utility-scale renewable energy procurement.
-          </p>
         </div>
       </section>
 
-      {/* GNA Service Section */}
-      <section id="gna" style={{
-        padding: '72px 0',
-        borderBottom: '1px solid var(--p-border)'
-      }}>
+      {/* =========================================================
+          FEATURE 01: GNA (Architectural Photo & Editorial Hierarchy)
+          ========================================================= */}
+      <section id="gna" className="service-editorial-block">
         <div className="wrap">
-          <div className="grid-2">
-            <div>
-              <div style={{
-                fontSize: '13px',
-                color: 'var(--p-accent)',
-                fontWeight: 600,
-                letterSpacing: '0.06em',
-                textTransform: 'uppercase',
-                marginBottom: '10px'
-              }}>
-                Service 01 &bull; Regulatory & Transmission Access
+          <div className="service-headline-row">
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '20px' }}>
+              <div className="service-num-big">01</div>
+              <div>
+                <div className="about-index-tag">Statutory Transmission Track</div>
+                <h2>{gna.title}</h2>
               </div>
-              <h2 style={{
-                fontSize: 'clamp(24px, 3.2vw, 38px)',
-                fontWeight: 500,
-                lineHeight: 1.18,
-                margin: '0 0 14px 0',
-                color: 'var(--p-ink)',
-                letterSpacing: '-0.02em',
-                wordBreak: 'break-word'
-              }}>
-                {gna.title}
-              </h2>
-              <div style={{
-                display: 'inline-block',
-                padding: '4px 12px',
-                borderRadius: '4px',
-                backgroundColor: 'var(--p-surface)',
-                border: '1px solid var(--p-border)',
-                fontSize: '13px',
-                fontWeight: 500,
-                color: 'var(--p-muted)',
-                marginBottom: '18px'
-              }}>
-                {gna.tagline}
-              </div>
-              <p style={{
-                fontSize: '15px',
-                color: 'var(--p-ink)',
-                lineHeight: 1.65,
-                marginBottom: '20px'
-              }}>
-                {gna.overview}
-              </p>
+            </div>
+            <div style={{ fontSize: '13px', fontWeight: 600, color: '#557297' }}>
+              CERC Framework 2022 & Amendments
+            </div>
+          </div>
 
-              {/* Placeholder Box */}
-              <div style={{
-                padding: '16px 18px',
-                backgroundColor: 'var(--p-surface)',
-                borderLeft: '4px solid var(--p-accent)',
-                borderRadius: '4px',
-                fontSize: '14px',
-                color: 'var(--p-muted)',
-                lineHeight: 1.5,
-                marginBottom: '24px'
-              }}>
+          {/* Panoramic Photo Frame */}
+          <div className="service-panoramic-frame">
+            <img src={gna.image} alt={gna.imageAlt} />
+          </div>
+
+          {/* Clean Text Breakdown with Fine Rules */}
+          <div className="editorial-rules-grid">
+            <div>
+              <p className="editorial-overview-p">
+                Under the Central Electricity Regulatory Commission (CERC) Connectivity and General Network Access to the Inter-State Transmission System Regulations, 2022 and subsequent amendments, power generation entities must satisfy rigorous statutory prerequisites to evacuate electricity across the national transmission network.
+              </p>
+              <p className="editorial-overview-p" style={{ marginTop: '16px' }}>
+                Our practice provides independent guidance to developers through each statutory stage, from eligibility assessment and portal documentation to bilateral connection agreement execution.
+              </p>
+            </div>
+
+            <div>
+              <div className="editorial-breakdown-list">
+                {gna.focusAreas.map((area, idx) => (
+                  <div key={idx} className="editorial-breakdown-item">
+                    <h5>{area.title}</h5>
+                    <p>{area.detail}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Understated Placeholder Note */}
+              <div className="understated-placeholder-note">
                 {gna.placeholder}
               </div>
-
-              {/* Focus Area Cards */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-                {gna.focusAreas.map((area, idx) => (
-                  <div key={idx} style={{
-                    padding: '14px 18px',
-                    backgroundColor: 'var(--p-surface-subtle)',
-                    borderRadius: '6px',
-                    border: '1px solid var(--p-border)'
-                  }}>
-                    <div style={{ fontWeight: 600, fontSize: '15px', color: 'var(--p-ink)', marginBottom: '4px' }}>
-                      {area.title}
-                    </div>
-                    <div style={{ fontSize: '13px', color: 'var(--p-muted)', lineHeight: 1.5 }}>
-                      {area.detail}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div style={{ marginTop: '24px' }}>
-                <Link to="/#contact" className="btn btn--primary">
-                  Inquire About GNA Advisory
-                </Link>
-              </div>
-            </div>
-
-            {/* Service Image with Technical Spec Card */}
-            <div>
-              <div style={{
-                position: 'relative',
-                borderRadius: '12px',
-                overflow: 'hidden',
-                border: '1px solid var(--p-border)',
-                backgroundColor: 'var(--p-surface)',
-                boxShadow: '0 12px 32px rgba(0, 0, 0, 0.06)'
-              }}>
-                <img
-                  src={gna.image}
-                  alt={gna.imageAlt}
-                  loading="lazy"
-                  style={{
-                    width: '100%',
-                    height: 'auto',
-                    maxHeight: '440px',
-                    objectFit: 'cover',
-                    display: 'block'
-                  }}
-                />
-                <div style={{
-                  position: 'absolute',
-                  bottom: '14px',
-                  left: '14px',
-                  right: '14px',
-                  backgroundColor: 'rgba(223, 222, 219, 0.94)',
-                  backdropFilter: 'blur(8px)',
-                  WebkitBackdropFilter: 'blur(8px)',
-                  padding: '10px 14px',
-                  borderRadius: '8px',
-                  border: '1px solid var(--p-border)',
-                  fontSize: '12px',
-                  color: 'var(--p-ink)',
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  flexWrap: 'wrap',
-                  gap: '8px'
-                }}>
-                  <div>
-                    <span style={{ fontWeight: 600 }}>High-Voltage ISTS Substation</span> &bull; 750 kV Node
-                  </div>
-                  <div style={{ color: 'var(--p-muted)', fontSize: '11px' }}>
-                    Photo: Novoklimov (CC0)
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECI Tenders Service Section */}
-      <section id="seci" style={{
-        padding: '72px 0',
-        borderBottom: '1px solid var(--p-border)',
-        backgroundColor: 'var(--p-surface-subtle)'
-      }}>
+      {/* =========================================================
+          FEATURE 02: SECI TENDERS (Midnight Cobalt Canvas)
+          ========================================================= */}
+      <section id="seci" className="service-editorial-block-dark">
         <div className="wrap">
-          <div className="grid-2">
-            {/* Image First on Desktop for SECI section */}
-            <div style={{ order: 1 }}>
-              <div style={{
-                position: 'relative',
-                borderRadius: '12px',
-                overflow: 'hidden',
-                border: '1px solid var(--p-border)',
-                backgroundColor: 'var(--p-surface)',
-                boxShadow: '0 12px 32px rgba(0, 0, 0, 0.06)'
-              }}>
-                <img
-                  src={seci.image}
-                  alt={seci.imageAlt}
-                  loading="lazy"
-                  style={{
-                    width: '100%',
-                    height: 'auto',
-                    maxHeight: '440px',
-                    objectFit: 'cover',
-                    display: 'block'
-                  }}
-                />
-                <div style={{
-                  position: 'absolute',
-                  bottom: '14px',
-                  left: '14px',
-                  right: '14px',
-                  backgroundColor: 'rgba(223, 222, 219, 0.94)',
-                  backdropFilter: 'blur(8px)',
-                  WebkitBackdropFilter: 'blur(8px)',
-                  padding: '10px 14px',
-                  borderRadius: '8px',
-                  border: '1px solid var(--p-border)',
-                  fontSize: '12px',
-                  color: 'var(--p-ink)',
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  flexWrap: 'wrap',
-                  gap: '8px'
-                }}>
-                  <div>
-                    <span style={{ fontWeight: 600 }}>Utility-Scale Solar Generation</span> &bull; Clean Power
-                  </div>
-                  <div style={{ color: 'var(--p-muted)', fontSize: '11px' }}>
-                    Photo: APPA (Unsplash)
-                  </div>
-                </div>
+          <div className="service-headline-row">
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '20px' }}>
+              <div className="service-num-big" style={{ color: '#38bdf8' }}>02</div>
+              <div>
+                <div className="about-index-tag" style={{ color: '#38bdf8' }}>Commercial Bidding Track</div>
+                <h2>{seci.title}</h2>
               </div>
             </div>
+            <div style={{ fontSize: '13px', fontWeight: 600, color: '#94a3b8' }}>
+              Central Competitive Auctions
+            </div>
+          </div>
 
-            {/* Content for SECI */}
-            <div style={{ order: 2 }}>
-              <div style={{
-                fontSize: '13px',
-                color: 'var(--p-accent)',
-                fontWeight: 600,
-                letterSpacing: '0.06em',
-                textTransform: 'uppercase',
-                marginBottom: '10px'
-              }}>
-                Service 02 &bull; Renewable Energy Procurement
-              </div>
-              <h2 style={{
-                fontSize: 'clamp(24px, 3.2vw, 38px)',
-                fontWeight: 500,
-                lineHeight: 1.18,
-                margin: '0 0 14px 0',
-                color: 'var(--p-ink)',
-                letterSpacing: '-0.02em',
-                wordBreak: 'break-word'
-              }}>
-                {seci.title}
-              </h2>
-              <div style={{
-                display: 'inline-block',
-                padding: '4px 12px',
-                borderRadius: '4px',
-                backgroundColor: 'var(--p-surface)',
-                border: '1px solid var(--p-border)',
-                fontSize: '13px',
-                fontWeight: 500,
-                color: 'var(--p-muted)',
-                marginBottom: '18px'
-              }}>
-                {seci.tagline}
-              </div>
-              <p style={{
-                fontSize: '15px',
-                color: 'var(--p-ink)',
-                lineHeight: 1.65,
-                marginBottom: '20px'
-              }}>
-                {seci.overview}
+          {/* Panoramic Photo Frame */}
+          <div className="service-panoramic-frame" style={{ background: '#000' }}>
+            <img src={seci.image} alt={seci.imageAlt} />
+          </div>
+
+          {/* Clean Text Breakdown with Fine Rules */}
+          <div className="editorial-rules-grid">
+            <div>
+              <p className="editorial-overview-p">
+                The Solar Energy Corporation of India (SECI) conducts major competitive auctions that define India's renewable energy deployment. We provide independent commercial and regulatory advisory to developers participating in central competitive clean energy tenders.
               </p>
+              <p className="editorial-overview-p" style={{ marginTop: '16px' }}>
+                Our advisory spans the tender lifecycle under standard bidding guidelines issued by the Ministry of Power and MNRE, focusing on statutory risk management and bankable commercial execution.
+              </p>
+            </div>
 
-              {/* Placeholder Box */}
-              <div style={{
-                padding: '16px 18px',
-                backgroundColor: 'var(--p-surface)',
-                borderLeft: '4px solid var(--p-accent)',
-                borderRadius: '4px',
-                fontSize: '14px',
-                color: 'var(--p-muted)',
-                lineHeight: 1.5,
-                marginBottom: '24px'
-              }}>
-                {seci.placeholder}
-              </div>
-
-              {/* Focus Area Cards */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+            <div>
+              <div className="editorial-breakdown-list">
                 {seci.focusAreas.map((area, idx) => (
-                  <div key={idx} style={{
-                    padding: '14px 18px',
-                    backgroundColor: 'var(--p-surface)',
-                    borderRadius: '6px',
-                    border: '1px solid var(--p-border)'
-                  }}>
-                    <div style={{ fontWeight: 600, fontSize: '15px', color: 'var(--p-ink)', marginBottom: '4px' }}>
-                      {area.title}
-                    </div>
-                    <div style={{ fontSize: '13px', color: 'var(--p-muted)', lineHeight: 1.5 }}>
-                      {area.detail}
-                    </div>
+                  <div key={idx} className="editorial-breakdown-item">
+                    <h5>{area.title}</h5>
+                    <p>{area.detail}</p>
                   </div>
                 ))}
               </div>
 
-              <div style={{ marginTop: '24px' }}>
-                <Link to="/#contact" className="btn btn--primary">
-                  Inquire About SECI Advisory
-                </Link>
+              {/* Understated Placeholder Note */}
+              <div className="understated-placeholder-note">
+                {seci.placeholder}
               </div>
             </div>
           </div>

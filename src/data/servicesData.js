@@ -1,47 +1,47 @@
 export const servicesData = [
   {
     id: 'gna',
-    title: 'General Network Access (GNA)',
+    title: 'General Network Access (GNA) Regulations',
     tagline: 'CERC Regulatory Architecture & ISTS Connectivity',
     image: '/assets/img/gna-substation.webp',
-    imageAlt: '750 kV high-voltage transmission substation autotransformer',
-    overview: 'AD P&E Consultancy provides specialized technical advisory and educational analysis on the General Network Access (GNA) framework governed by the Central Electricity Regulatory Commission (CERC). We assist power sector entities in understanding the operational, regulatory, and transmission aspects of connecting to India\'s Inter-State Transmission System (ISTS).',
-    placeholder: '[Detailed advisory deliverables, application filing workflows, and compliance advisory scopes will be published here upon confirmation by the practice.]',
+    imageAlt: '765kV High Voltage Electricity Substation',
+    overview: 'Under the Central Electricity Regulatory Commission (CERC) Connectivity and General Network Access to the Inter-State Transmission System Regulations, 2022 and subsequent amendments, power generation entities must satisfy rigorous statutory prerequisites to evacuate electricity across the national transmission network. Our practice provides independent guidance to developers through each statutory stage, from eligibility assessment and portal documentation to bilateral connection agreement execution.',
+    placeholder: 'Note: Specific proprietary deliverable frameworks, technical documentation packages, and specialized scope parameters are currently under final review by consultancy leadership.',
     focusAreas: [
       {
-        title: 'Regulatory & Statutory Alignment',
-        detail: 'Analysis of CERC GNA regulations, connectivity rules, open access modalities, and grid code compliance.'
+        title: 'CERC GNA Regulatory Architecture',
+        detail: 'Evaluation of statutory applicability, developer eligibility, and regulatory amendments governing non-discriminatory grid access.'
       },
       {
-        title: 'Transmission Connectivity Advisory',
-        detail: 'Technical guidance on application procedures, substations bay allocations, and inter-state grid interconnection.'
+        title: 'ISTS Interconnection Principles',
+        detail: 'Guidance on statutory documentation requirements, procedural portal filings, and nodal agency communication channels.'
       },
       {
-        title: 'Drawing Rights & Capacity Planning',
-        detail: 'Understanding GNA quantum allocation, temporary access (T-GNA), and transmission charge settlement dynamics.'
+        title: 'Grid Compliance & Connection Agreements',
+        detail: 'Advisory review of transmission connection obligations, statutory construction milestones, and technical synchronization standards.'
       }
     ]
   },
   {
     id: 'seci',
-    title: 'SECI Renewable Tenders & Procurement',
-    tagline: 'Solar, Wind, Hybrid & Storage Capacity Auctions',
+    title: 'SECI Utility-Scale Renewable Tenders',
+    tagline: 'Central Competitive Auctions & Standard Bidding',
     image: '/assets/img/seci-solar.webp',
-    imageAlt: 'Large scale photovoltaic solar energy power station',
-    overview: 'Guidance and analytical intelligence covering renewable energy competitive bidding conducted by the Solar Energy Corporation of India (SECI). We provide developers and clean-tech entities with clarity on auction mechanisms, Power Purchase Agreement (PPA) norms, and transmission linkage requirements.',
-    placeholder: '[Detailed tender tracking matrices, auction advisory frameworks, and bidding support services will be published here upon confirmation by the practice.]',
+    imageAlt: 'Utility-Scale Photovoltaic Solar Farm',
+    overview: 'The Solar Energy Corporation of India (SECI) conducts major competitive auctions that define India\'s renewable energy deployment. We provide independent commercial and regulatory advisory to developers participating in central competitive clean energy tenders. Our advisory spans the tender lifecycle under standard bidding guidelines issued by the Ministry of Power and MNRE, focusing on statutory risk management and bankable commercial execution.',
+    placeholder: 'Note: Specific bidding advisory models, commercial sensitivity packages, and proprietary auction strategies are currently being finalized by the business leadership.',
     focusAreas: [
       {
-        title: 'Auction & Scheme Evaluation',
-        detail: 'Monitoring RfS notices, tariff trajectories, and capacity allocation across ISTS-connected renewable tenders.'
+        title: 'Request for Selection (RfS) Compliance Review',
+        detail: 'In-depth statutory review of tender terms, technical qualification prerequisites, net worth rules, and bid security conditions.'
       },
       {
-        title: 'PPA & PSA Term Analysis',
-        detail: 'Technical and operational assessment of standard power purchase terms, delivery point obligations, and milestone schedules.'
+        title: 'Standard Bidding Guidelines Analysis',
+        detail: 'Commercial assessment of bidding guidelines, tariff structures, reverse auction mechanics, and statutory milestone obligations.'
       },
       {
-        title: 'Grid Evacuation Alignment',
-        detail: 'Harmonizing tender bids with dedicated transmission evacuation infrastructure and substation commissioning timelines.'
+        title: 'Power Purchase Agreement (PPA) Terms Orientation',
+        detail: 'Advisory guidance on 25-year standardized PPA/PSA contract terms, payment security mechanisms, and statutory risk allocation.'
       }
     ]
   }

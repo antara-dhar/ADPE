@@ -1,27 +1,33 @@
 :root {
-  /* stone-blueprint palette (Taste Skill 2.5) */
-  --p-bg: #dfdedb;              /* Warm stone drafting ground */
-  --p-surface: #d3d2ce;         /* Structural panel step */
-  --p-surface-subtle: #e6e5e2;  /* Elevated card ground */
-  --p-ink: #26251e;             /* Near-black graphite ink */
-  --p-muted: #5f5d55;           /* Secondary technical metadata */
-  --p-accent: #2456d6;          /* Blueprint blue */
-  --p-accent-ink: #ffffff;
-  --p-border: #c4c3be;          /* Hairline boundary */
-
   /* Typography */
-  --font-display: 'Geist', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-text: 'Geist', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
-  --display-weight: 400;
-  --display-tracking: -0.035em;
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
-  /* Spacing Scale */
-  --nav: 72px;
-  --container: 1280px;
-  --gut: 80px;
-  --gutter: 24px;
-  --padt: 120px;
-  --padb: 72px;
-  --head-gap: 48px;
+  /* Sophisticated Editorial Palette */
+  --sky-light: #f4f8fe;
+  --sky-blue: #60a8f4;
+  --electric-blue: #0077ff;
+  --electric-cyan: #38bdf8;
+
+  /* Midnight Editorial Tones */
+  --navy-night: #040813;
+  --navy-deep: #070e1c;
+  --navy-cobalt: #0a152b;
+  --navy-surface: #0e1d3a;
+
+  /* Typography & Neutral Shades */
+  --text-dark: #071329;
+  --text-muted: #3a4f70;
+  --text-subtle: #5a7194;
+  --text-light: #f8fafc;
+  --text-dim: #94a3b8;
+
+  /* Precise Hairline Rules */
+  --rule-light: rgba(7, 19, 41, 0.12);
+  --rule-subtle: rgba(7, 19, 41, 0.07);
+  --rule-dark: rgba(255, 255, 255, 0.12);
+
+  /* Layout */
+  --nav-height: 76px;
+  --container: 1320px;
 }
